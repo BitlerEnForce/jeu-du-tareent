@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du taréent</title>
+
+    <link rel="stylesheet" href="css/jeu.css">
+    <link rel="stylesheet" href="assistant/assisant.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    
+    <div class="tout">
+        <div class="selection">
+            <h2>Choisissez une configuration</h2>
+            <select id="select_option" name="option" onchange="getSelectedValue()">
+                <option value="tirage3">Tirage à 3 cartes</option>
+                <option value="tirage5">Tirage à 5 cartes</option>
+                <option value="tirage7">Tirage à 7 cartes</option>
+            </select>
+        </div>
+        <div class="divCarte">
+            <div class="config3">
+                <div class="carte1 carte">
+                    <h3>Carte n°1</h3>
+                    <p>Situation au moment du tirage</p>
+                    <button class="un">Trouver une carte</button>
+                </div>
+                <div class="carte2 carte">
+                    <h3>Carte n°2</h3>
+                    <p>Evolution probable de la situation</p>
+                    <button class="deux">Trouver une carte</button>
+                </div>
+                <div class="carte3 carte">
+                    <h3>Carte n°3</h3>
+                    <p>Solution du problème</p>
+                    <button class="trois">Trouver une carte</button>
+                </div>
+            </div>
+            <div class="config5">
+                <div class="carte1Conf5 carte">
+                    <h3>Carte n°1</h3>
+                    <p>Ce qui est favorable</p>
+                    <button class="un">Trouver une carte</button>
+                </div>
+                <div class="carte2Conf5 carte">
+                    <h3>Carte n°2</h3>
+                    <p>Les obstacles</p>
+                    <button class="deux">Trouver une carte</button>
+                </div>
+                <div class="carte3Conf5 carte">
+                    <h3>Carte n°3</h3>
+                    <p>Son évolution à court terme</p>
+                    <button class="trois">Trouver une carte</button>
+                </div>
+                <div class="carte4Conf5 carte">
+                    <h3>Carte n°4</h3>
+                    <p>L'évolution à long terme, son issue</p>
+                    <button class="quatre">Trouver une carte</button>
+                </div>
+                <div class="carte5Conf5 carte">
+                    <h3>Carte n°5</h3>
+                    <p>La synthèse, la réussite ou l'échec</p>
+                    <button class="cinq">Trouver une carte</button>
+                </div>
+            </div>
+            <div class="config7">
+                <div class="carte1Conf7 carte">
+                    <h3>Carte n°1</h3>
+                    <p>Le passé récent</p>
+                    <button class="un">Trouver une carte</button>
+                </div>
+                <div class="carte2Conf7 carte">
+                    <h3>Carte n°2</h3>
+                    <p>Le présent</p>
+                    <button class="deux">Trouver une carte</button>
+                </div>
+                <div class="carte3Conf7 carte">
+                    <h3>Carte n°3</h3>
+                    <p>Le futur proche</p>
+                    <button class="trois">Trouver une carte</button>
+                </div>
+                <div class="carte4Conf7 carte">
+                    <h3>Carte n°4</h3>
+                    <p>La vie sentimentale actuelle</p>
+                    <button class="quatre">Trouver une carte</button>
+                </div>
+                <div class="carte5Conf7 carte">
+                    <h3>Carte n°5</h3>
+                    <p>La sensualité actuelle</p>
+                    <button class="cinq">Trouver une carte</button>
+                </div>
+                <div class="carte6Conf7 carte">
+                    <h3>Carte n°6</h3>
+                    <p>Secteur professionel / social actuel</p>
+                    <button class="six">Trouver une carte</button>
+                </div>
+                <div class="carte7Conf7 carte">
+                    <h3>Carte n°7</h3>
+                    <p>L'état d'esprit présent</p>
+                    <button class="sept">Trouver une carte</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VRAI ASSISANT-->
+
+    <div class="option">
+        <div class="accueil">
+            <a href="index.html"><span class="material-symbols-outlined">home</span></a>
+        </div>
+        <div class="musique">
+            <button class="play"><span class="material-symbols-outlined">play_circle</span></button>
+            <button class="pause"><span class="material-symbols-outlined">pause</span></button>
+            <div class="texte">
+                <p>Musique d'ambiance : </p>
+                <div class="titre-musique">
+                    <p>Composition de BitlerEnForce</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="maFenetre">
+        <div id="maBarreDeTitre">Assistant (vous pouvez me déplacer)</div>
+        <div class="img"></div>
+        <div class="message">
+            <p></p>
+        </div>
+        <button>D'acc</button>
+    </div>
+
+    <!-- CHAT 
+    <div class="chat">
+        <div class="info">
+            <p>Messagerie en direct</p>
+            <button><span class="material-symbols-outlined">chat</span></button>
+        </div>
+        <div class="message-tout">
+            Aucun message. Si vous raffraichissez la page, les messages déjà envoyé(s) s'effaceront.
+        </div>
+        <div class="entree">
+            <p>Entrez un message public</p>
+            <input type="text" name="chat" class="chatchamps" placeholder="Votre message">
+        </div>
+    </div>
+    -->
+    
+    <script src="js/recuperationItem.js"></script>
+    <script src="js/bouton/boutonConfig3.js"></script>
+    <script src="js/bouton/boutonConfig5.js"></script>
+    <script src="js/bouton/boutonConfig7.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/jeu.js"></script>
+    <script src="assistant/assisant.js"></script>
+
+</body>
+</html>
